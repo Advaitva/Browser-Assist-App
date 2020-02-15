@@ -1,0 +1,26 @@
+{
+  "name": "speech-to-text",
+  "version": "1.0.0",
+  "description": "Speech to text conversion using api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Advaitva/Speech-To-Text.git"
+  },
+  "author": "Advaitva Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Advaitva/Speech-To-Text/issues"
+  },
+  "homepage": "https://github.com/Advaitva/Speech-To-Text#readme",
+  "dependencies": {
+    "@google-cloud/speech": "^3.5.3",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "navigator": "^1.0.1",
+    "request": "^2.88.0"
+  }
+}
