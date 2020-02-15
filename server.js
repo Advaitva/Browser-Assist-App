@@ -17,15 +17,7 @@ var getData='http://api.openweathermap.org/data/2.5/weather?q='+'Bengaluru,in'+'
     mood,
     lat,
     long;
-// if(navigator.geolocation)
-// {
-//     navigator.geolocation.getCurrentPosition(function(pos){
-//     lat=pos.coords.latitude;
-//     long=pos.coords.longitude;
-//     });
-// }
-// else console.log('Browser Not Supported');
-console.log(lat);
+
 function apiCall(){
 
     request(getData,(error,response,body)=>{
@@ -42,21 +34,21 @@ function apiCall(){
             temp=Math.round(weather.main.temp-273.15);
         } 
     })
-request(quotesUrl,(error,response,data)=>{
-    if(error)
-    console.log('Error Has Occured\n'+error);
-    else
-        if(response.statusCode==200)
-        {
-            quote=JSON.parse(data);
-            qNum=Math.floor(Math.random()*quote.length);
-            quoteText=quote[qNum].text;
-            quoteAuthor=quote[qNum].author;
-        }
-    }); 
-}
+    request(quotesUrl,(error,response,data)=>{
+        if(error)
+        console.log('Error Has Occured\n'+error);
+        else
+            if(response.statusCode==200)
+            {
+                quote=JSON.parse(data);
+                qNum=Math.floor(Math.random()*quote.length);
+                quoteText=quote[qNum].text;
+                quoteAuthor=quote[qNum].author;
+            }
+        }); 
+    }
+   
     app.get('/',(req,res)=>{
-    apiCall();
     date = new Date();
     hours = date.getHours();
     if(0<=hours && hours<=11)
@@ -79,6 +71,7 @@ request(quotesUrl,(error,response,data)=>{
         greeting="Night";
         mood="Sleep";
     }
+    apiCall();
     sendData={
         temp:temp,
         quoteText:quoteText,
