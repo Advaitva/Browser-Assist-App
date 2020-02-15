@@ -52,10 +52,6 @@ request(quotesUrl,(error,response,data)=>{
             quoteAuthor=quote[qNum].author;
         }
    }); 
-// app.post('/',(req,res)=>{
-//     data=JSON.parse(req.body.sendData);
-//     console.log(data.lat);
-// })
 app.get('/',(req,res)=>{
     date = new Date();
     hours = date.getHours();
