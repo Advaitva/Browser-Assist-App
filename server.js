@@ -26,9 +26,11 @@ var getData='http://api.openweathermap.org/data/2.5/weather?q='+'Bengaluru,in'+'
 // }
 // else console.log('Browser Not Supported');
 console.log(lat);
-request(getData,(error,response,body)=>{
-    if(error)
-    {
+function apiCall(){
+
+    request(getData,(error,response,body)=>{
+        if(error)
+        {
             console.log(error)
             console.log('Something went wrong')
     }
@@ -51,8 +53,10 @@ request(quotesUrl,(error,response,data)=>{
             quoteText=quote[qNum].text;
             quoteAuthor=quote[qNum].author;
         }
-   }); 
-app.get('/',(req,res)=>{
+    }); 
+}
+    app.get('/',(req,res)=>{
+    apiCall();
     date = new Date();
     hours = date.getHours();
     if(0<=hours && hours<=11)
