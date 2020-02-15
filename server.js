@@ -82,7 +82,7 @@ app.get('/',(req,res)=>{
         greeting:greeting,
         mood:mood,
    };
-   res.render('Welcome',sendData);
+   res.render('index',sendData);
 })
 
 app.listen(process.env.PORT||8080,function(){
