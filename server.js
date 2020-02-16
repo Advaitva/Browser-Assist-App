@@ -3,7 +3,8 @@ var express=require('express'),
     request=require('request');
 app.use(express.static(__dirname+"/public"));
 app.set('view engine','ejs');
-var getData='http://api.openweathermap.org/data/2.5/weather?q='+'Bengaluru,in'+'&appid=a18c244097e452a81459b603c03ce393',
+var city="Vellore,in",
+    getData='http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=a18c244097e452a81459b603c03ce393',
     weather,
     temp,
     quotesUrl='https://type.fit/api/quotes',
