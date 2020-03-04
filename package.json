@@ -22,6 +22,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.3",
     "navigator": "^1.0.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "time": "^0.12.0"
   }
 }

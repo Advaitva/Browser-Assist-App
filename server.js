@@ -1,6 +1,7 @@
 var express=require('express'),
     app=express(),
-    request=require('request');
+    request=require('request'),
+    time=require('time');
 app.use(express.static(__dirname+"/public"));
 app.set('view engine','ejs');
 var city="Vellore,in",
@@ -48,7 +49,7 @@ function apiCall(){
         }); 
     }
     function getMood(){
-        date = new Date();
+        date = new time.Date();
         hours = date.getHours();
         if(0<=hours && hours<=11)
         {
