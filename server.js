@@ -1,7 +1,7 @@
 var express=require('express'),
     app=express(),
-    request=require('request'),
-    time=require('time');
+    request=require('request');
+    // time=require('time');
 app.use(express.static(__dirname+"/public"));
 app.set('view engine','ejs');
 var city="Vellore,in",
@@ -48,32 +48,7 @@ function apiCall(){
             }
         }); 
     }
-    function getMood(){
-        date = new time.Date();
-        hours = date.getHours();
-        if(0<=hours && hours<=11)
-        {
-            greeting="Morning";
-            mood="Day";
-        }
-        else if(12<=hours && hours<=16)
-        {
-            greeting="Afternoon";
-            mood="Day";
-        }
-        else if(17<=hours && hours<=20)
-        {
-            greeting="Evening";
-            mood="Time";
-        }
-        else
-        {
-            greeting="Night";
-            mood="Sleep";
-        }
-    }
     app.get('/',(req,res)=>{
-    getMood();
     apiCall();
     sendData={
         temp:temp,

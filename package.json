@@ -1,28 +1,25 @@
 {
-  "name": "speech-to-text",
+  "name": "mybrowsee",
   "version": "1.0.0",
-  "description": "Speech to text conversion using api",
-  "main": "app.js",
+  "description": "Browser Assistant",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Advaitva/Speech-To-Text.git"
+    "url": "git+https://github.com/Advaitva/Browser-Assist.git"
   },
   "author": "Advaitva Gupta",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Advaitva/Speech-To-Text/issues"
+    "url": "https://github.com/Advaitva/Browser-Assist/issues"
   },
-  "homepage": "https://github.com/Advaitva/Speech-To-Text#readme",
+  "homepage": "https://github.com/Advaitva/Browser-Assist#readme",
   "dependencies": {
-    "@google-cloud/speech": "^3.5.3",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "mongoose": "^5.9.3",
-    "navigator": "^1.0.1",
-    "request": "^2.88.0",
-    "time": "^0.12.0"
+    "request": "^2.88.2"
   }
 }

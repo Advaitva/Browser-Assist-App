@@ -4,104 +4,17 @@
     <title>Assistant</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
     </script>
-     <link rel="shortcut icon" href="icon.ico" type="image/x-icon"/>
-    <style>
-        body{
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            overflow: hidden;
-            
-        }
-        img{
-            margin: 0;
-            max-width: 100%;
-            size: auto;
-            
-        }
-        #container,#greet,#quote,#author,#searchBox{
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        #container{
-            top: 10%;
-            font-size: 3vw;
-        }
-        #greet{
-            top: 20%;
-            font-size: 2vw;
-        }
-        #quote{
-            top: 75%;
-            font-size: 1.5vw;
-            font-style: italic;
-        }
-        #author{
-            top: 81%;
-            text-align: right;
-            font-size:1.2vw;
-        }
-        #weather{
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            font-size: 1.1vw;
-        }
-        #tempDisp{
-            font-size: 2.5vw;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-        }
-        #searchBox{
-            top: 40%;
-        }
-        .tabs{
-            background-color: rgba(0, 0, 0, 0.8);
-            color: honeydew;
-            margin: auto 3%;
-            padding: 20px 30px 20px 60px ;
-            text-align: right;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-        .tabs:hover{
-            background-color: cornsilk;
-            cursor: pointer;
-            color: black;
-        }
-        .quote{
-            padding: 0.4% 2%;
-            width: fit-content;
-            background-color: rgb(240, 240, 240);   
-            color: black;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            border-radius: 40px;
-        }
-        .disp{
-            color: ghostwhite;
-            /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-        }
-        .tabs img{
-            height: 30px;
-            position: absolute;
-            margin-left: -40px;
-            margin-top: -8px;
-            border-radius: 40%;
-        }
-        
+    <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/style.css">
     </style>
 </head>
-<body onload="sendCoord()">
-   
-    <img id="background" alt="Background" src='b7.jpg'>
+<body>
+    <img id="background" alt="Background" src='images/b4.jpg'>
     <div id="container">
         <span class="disp">
-            Good <%= greeting %>  Advaitva :)
+            
+                Good <span id="greetMsg"></span>, Advaitva :)
+
         </span>
     </div>
     <div id="weather" class="disp">
@@ -110,25 +23,23 @@
         </b>
     </div>
     <div id="greet" class="disp">
-        <span>
-            Have a Great <%=mood%> !!
-        </span>
+            Have a Great.. <span id="moodMsg"> </span>  !!
     </div>
     <div id="searchBox">
         <span class="tabs" onclick="window.location.href='https://www.google.com'">
-            <img src="google.png">
+            <img src="/images/google.png">
             Google
         </span>
         <span class="tabs" onclick="window.location.href='https://www.youtube.com'">
-            <img src="youtube.png">
+            <img src="/images/youtube.png">
             Youtube
         </span>
         <span class="tabs" onclick="window.location.href='https://www.github.com'">
-            <img src="github.png">
+            <img src="/images/github.png">
             Github
         </span>
         <span class="tabs" onclick="window.location.href='https://web.whatsapp.com'">
-            <img src="whatsapp.png">
+            <img src="/images/whatsapp.png">
             Whatsapp
         </span>
     </div>
@@ -139,27 +50,5 @@
         <span class="quote">-<%=quoteAuthor%></span>
     </div>
 </body>
-<script>
-    var background=document.getElementById('background');
-    var n=Math.ceil(Math.random()*8);
-    background.src='b'+n+'.jpg';
-    function sendCoord(){
-
-        if(navigator.geolocation)
-        {
-            navigator.geolocation.getCurrentPosition(function(pos){
-                var lat=pos.coords.latitude;
-                var long=pos.coords.longitude;
-                var dataSend={
-                    lat:lat,
-                    long:long
-                }
-            });
-            $.post('/',dataSend,function(data,status){
-                console.log(data);
-                console.log(status);
-            });
-        }
-    }
-    </script>
+<script src="/js/javascript.js"></script>
 </html>
