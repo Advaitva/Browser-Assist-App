@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    
+    
+    <title>Hola Amigo!</title>
+    <link rel="stylesheet" href="/css/loaderStyle.css">
+
+</head>
+<body>
+    <span id="head" class="content">Welcome!</span>
+    <div id="container">
+
+        <form action="/details" method="POST" autocomplete="off">    
+            
+           <span class="content"> Forget 'em all, what should I call you?</span>
+                <input type="text" name="name" placeholder="Name">
+                <div class="autocomplete">
+                   <span class="content"> Where are we now?</span>
+                    <input id="myInput" type="text" name="city" placeholder="City">
+                </div>
+                <input type='submit'>
+        </form>
+    
+    </div>
+    </body>
+<script src='/js/loaderScript.js'></script>
+<script src="/js/three.r95.min.js"></script>
+    <script src="/js/vanta.birds.min.js"></script>
+    <script>
+    VANTA.BIRDS({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 700.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        quantity: 4.00,
+        scaleMobile: 1.00
+    })
+    </script>
+
+</html>

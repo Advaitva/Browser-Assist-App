@@ -6,20 +6,23 @@
     </script>
     <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/css/style.css">
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+   
     <img id="background" alt="Background">
     <div id="container">
         <span class="disp">
             
-                Good <span id="greetMsg"></span>, Advaitva :)
+                Good <span id="greetMsg"></span>, <%= name %> :)
 
         </span>
     </div>
     <div id="weather" class="disp">
         <b>It's 
-            <span id="tempDisp"><%=temp%>&deg;C </span>outside.
+            <span id="tempDisp"><%=temp%>&deg;C </span>
+            outside in 
+            <span id="cityDisp"><%= city %></span>.
         </b>
     </div>
     <div id="greet" class="disp">

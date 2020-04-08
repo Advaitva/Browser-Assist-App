@@ -7,6 +7,8 @@ body{
     background-attachment: fixed;
     overflow: hidden;
     
+
+    
 }
 img{
     margin: 0;
@@ -48,6 +50,10 @@ img{
     font-size: 2.5vw;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
+#cityDisp{
+    font-size: 1.5vw;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif    
+}
 #searchBox{
     top: 40%;
 }
@@ -76,7 +82,7 @@ img{
 .disp{
     color: ghostwhite;
     /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Comfortaa', cursive;
 }
 .tabs img{
     height: 30px;
