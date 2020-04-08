@@ -7,9 +7,10 @@
     <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-   
+    <span id="time">Time</span><span id="day">Day</span>
     <img id="background" alt="Background">
     <div id="container">
         <span class="disp">
@@ -21,7 +22,7 @@
     <div id="weather" class="disp">
         <b>It's 
             <span id="tempDisp"><%=temp%>&deg;C </span>
-            outside in 
+            outside in <br>
             <span id="cityDisp"><%= city %></span>.
         </b>
     </div>

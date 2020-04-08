@@ -1,6 +1,24 @@
 var background=document.getElementById('background');
-var n=Math.ceil(Math.random()*8);
-background.src='/images/b'+n+'.jpg';
+var time=document.getElementById('time');
+var day=document.getElementById('day');
+var n=Math.ceil(Math.random()*13);
+function timeset(){
+    var date=new Date,
+    hour=date.getHours(),
+    min=date.getMinutes(),
+    dayNum=date.getDay(),
+    dayArray=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    function n(n){
+        return n>9 ? '' + n:'0'+n;
+    }
+    // time.innerHTML=hour+ ':' + min + ':' +sec;
+    time.textContent=[n(hour),n(min)].join(':');
+    day.textContent=dayArray[dayNum];
+    setTimeout('timeset()',1000);
+
+}
+timeset();
+background.src='/images/b'+n+'_1.jpg';
 // function sendCoord(){
 
 //     if(navigator.geolocation)

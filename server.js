@@ -18,7 +18,7 @@ var weather,
     city;
 function apiCall(getData,name,city){
     return new Promise((resolve,reject)=>{
-        request(getData,(error,response,body)=>{
+        request(getData,(error,response,body)=>{       // Very Important
             if(error)
             {
                 console.log(error)
@@ -41,7 +41,6 @@ function apiCall(getData,name,city){
                 qNum=Math.floor(Math.random()*quote.length);
                 quoteText=quote[qNum].text;
                 quoteAuthor=quote[qNum].author;
-                console.log(name,city,temp,quoteText);
                 const sendData={
                     temp:temp,
                     name:name,
@@ -52,7 +51,7 @@ function apiCall(getData,name,city){
                resolve(sendData);
             }
     })
-    }); 
+}); 
     
        
     }

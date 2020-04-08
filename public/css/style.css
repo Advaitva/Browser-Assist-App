@@ -6,15 +6,28 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: hidden;
-    
-
-    
 }
 img{
     margin: 0;
     max-width: 100%;
     size: auto;
     
+}
+#time{
+    position: absolute;
+    top:5%;
+    right:170px;
+    color:white;
+    font-size: 3vw;
+    font-family: 'Comic Neue', cursive;
+}
+#day{
+    position: absolute;
+    top:8.5%;
+    right:80px;
+    color:white;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1vw;
 }
 #container,#greet,#quote,#author,#searchBox{
     position: absolute;
