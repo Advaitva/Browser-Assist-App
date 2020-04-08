@@ -87,11 +87,15 @@
     margin: auto;
     font-size: 5vw;
   }
+  #title{
+    margin:auto;
+    font-size: 2.5vw;
+  }
   #container{
     display: flex;
     flex-direction: column-reverse;
     width: 40%;
     font-size: 2vw;
     padding: 2%;
-    margin: 60px auto;
+    margin: 40px auto;
   }
