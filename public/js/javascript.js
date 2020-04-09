@@ -1,24 +1,31 @@
 var background=document.getElementById('background');
 var time=document.getElementById('time');
 var day=document.getElementById('day');
-var n=Math.ceil(Math.random()*13);
 function timeset(){
     var date=new Date,
     hour=date.getHours(),
     min=date.getMinutes(),
     dayNum=date.getDay(),
+    month=date.getMonth(),
+    dateN=date.getDate();
+    monthArray=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
     dayArray=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     function n(n){
         return n>9 ? '' + n:'0'+n;
     }
     // time.innerHTML=hour+ ':' + min + ':' +sec;
     time.textContent=[n(hour),n(min)].join(':');
-    day.textContent=dayArray[dayNum];
+    day.textContent=dayArray[dayNum]+','+' '+monthArray[month]+' '+dateN;
     setTimeout('timeset()',1000);
 
 }
 timeset();
-background.src='/images/b'+n+'_1.jpg';
+function backgroundSet(){
+    var n=Math.ceil(Math.random()*14);
+    background.src='/images/b'+n+'_1.jpg';
+    setTimeout('backgroundSet()',600000);
+}
+backgroundSet();
 // function sendCoord(){
 
 //     if(navigator.geolocation)
