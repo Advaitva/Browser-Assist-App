@@ -9,15 +9,18 @@
   
   body {
     /* font-weight: 700; */
-    
     display: flex;
     flex-direction: column;
     margin: 0; 
-    overflow-y:hidden;
+    
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
    
   }
+  body::-webkit-scrollbar {
+    display: none;
+  }
   
-  /*the container must be positioned relative:*/
   .autocomplete {
     position: relative;
     display: flex;
@@ -53,12 +56,12 @@
     border: 1px solid #d4d4d4;
     border-bottom: none;
     border-top: none;
-    z-index: 99;
+    /* z-index: 99; */
     /*position the autocomplete items to be the same width as the container:*/
     top: 100%;
     left: 0;
     right: 0;
-    font-size: large;
+    font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
   }
   
@@ -84,18 +87,36 @@
     font-family: 'Baloo Thambi 2', cursive;
   }
   #head{
-    margin: auto;
-    font-size: 5vw;
+    margin: auto; 
+    font-size: 3rem;
   }
   #title{
     margin:auto;
-    font-size: 2.5vw;
+    font-size: 2rem;
   }
   #container{
     display: flex;
     flex-direction: column-reverse;
     width: 40%;
-    font-size: 2vw;
-    padding: 2%;
-    margin: 40px auto;
+    font-size: 1.2rem;
+    padding: 1.5em;
+    margin: 2em auto;
+  }
+  @media only screen and (max-width: 940px){
+    html{
+      font-size: 20px;
+    }
+    #container{
+      width: 70%;
+      min-width: 50%;
+    }
+  }
+  @media only screen and (max-width:670px){
+    html{
+      font-size: 17px;
+    }
+    #container{
+      width: 90%;
+      min-width: 90%;
+    }
   }

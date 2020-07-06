@@ -4,30 +4,37 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+   
+  /* background-attachment: fixed; */
 }
-img {
+body::-webkit-scrollbar {
+  display: none;
+}
+#background {
   margin: 0;
-  max-width: 100%;
+  width: 100%;
+  height: 100vh;
   size: auto;
 }
 #time {
+  
   position: absolute;
-  top: 5%;
-  right: 170px;
+  top: 1.1em;
+  right: 5em;
   color: white;
-  font-size: 3vw;
+  font-size: 2rem;
   font-family: "Comic Neue", cursive;
 }
 #day {
   position: absolute;
-  top: 8.5%;
-  right: 40px;
+  top: 3em;
+  right: 2em;
   color: white;
   font-family: "Comfortaa", cursive;
 
-  font-size: 1vw;
+  font-size: 1rem;
 }
 #container,
 #greet,
@@ -40,44 +47,47 @@ img {
   width: 100%;
 }
 #container {
-  top: 10%;
-  font-size: 3vw;
+  top: 1em;
+  font-size: 3rem;
 }
 #greet {
-  top: 20%;
-  font-size: 2vw;
+  top: 4em;
+  font-size: 2rem;
 }
 #quote {
-  top: 75%;
-  font-size: 1.5vw;
+  
+  bottom:4em;
+  font-size: 1.3rem;
   font-style: italic;
+  text-align: center;
 }
 #author {
-  top: 81%;
-  text-align: right;
-  font-size: 1.2vw;
+  
+  bottom: 2em;
+  text-align: center;
+  font-size: 1.1rem;
 }
 #weather {
   position: absolute;
-  top: 5%;
-  left: 5%;
-  font-size: 1.1vw;
+  top: 2.5em;
+  left: 3em;
+  font-size: .6rem;
 }
 #tempDisp {
-  font-size: 2.5vw;
+  font-size: 2rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 #cityDisp {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 #searchBox {
-  top: 40%;
+  top: 45%;
 }
 .tabs {
   background-color: rgba(0, 0, 0, 0.8);
   color: honeydew;
-  margin: auto 3%;
+  margin: auto 3em;
   padding: 20px 30px 20px 60px;
   text-align: right;
   border-radius: 8px;
@@ -102,9 +112,51 @@ img {
   font-family: "Raleway", sans-serif;
 }
 .tabs img {
-  height: 30px;
+  height: 2em;
   position: absolute;
   margin-left: -40px;
   margin-top: -8px;
   border-radius: 40%;
+}
+
+@media (max-width:1100px){
+ #container{
+   
+   align-items: center;
+   font-size:2rem;
+ } 
+ #greet{
+   top: 3em;
+   font-size: 1.5rem;
+ }
+ #time{
+  top: 1.1em;
+  right: 2em;
+ }
+ #day{
+  top: 5em;
+  right: 1em;
+ }
+ #background{
+   width: 100%;
+   height:100vh;
+ }
+}
+@media (max-width:750px){
+  #time{
+    top: 10rem;
+    right: 10.2rem;
+   }
+   #day{
+    top: 13rem;
+    right: 7rem;
+   }
+   #greet{
+     top: 2.8em;
+     font-size: 1.5rem;
+   }
+   #weather{
+     top: 10rem;
+     left: 8rem;
+   }
 }
